@@ -20,7 +20,7 @@ export const PackageCardList = ({
       {packages.map((pkg) => (
         <Grid item container key={pkg.id} md={4}>
           <PackageCard
-            pkg={pkg}
+            value={pkg}
             isSelected={pkg === selectedPackage}
             onSelected={onSelect}
           />

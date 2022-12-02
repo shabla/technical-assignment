@@ -1,5 +1,6 @@
 import { InsurancePackage } from "../models/InsurancePackage";
 
+// This data could come from an endpoint and be fetched at runtime
 export const packages: InsurancePackage[] = [
   {
     id: 1,

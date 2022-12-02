@@ -1,3 +1,4 @@
+// Ideally the currency and locale would come from a config somewhere
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",

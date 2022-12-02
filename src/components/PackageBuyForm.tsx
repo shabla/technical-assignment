@@ -33,19 +33,23 @@ export const PackageBuyForm = ({
   const [age, setAge] = useState<number>();
   const [gender, setGender] = useState<string>("");
 
+  // If the app would contain more forms, or more complicated forms, it might be worth it using a form management
+  // library (ie. formik) and/or a data validation library (ie. validatejs)
   const isFormValid = (): boolean => {
     return (
       email.length > 0 && age !== undefined && !isNaN(age) && gender.length > 0
     );
   };
 
+  //
   return (
     <form
       className={classes.root}
       autoComplete="off"
       action="http://www.example.com"
     >
-      {/* Include the selected package id in the form fields as an hidden value */}
+      {/* Include the selected package id in the form fields as an hidden value. Could include more or different values
+      depending on the destination. */}
       <input type="hidden" name="packageId" value={packageId} />
 
       <Grid container>

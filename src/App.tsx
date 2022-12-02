@@ -27,6 +27,8 @@ export const App: React.FunctionComponent = () => {
           </Toolbar>
         </AppBar>
 
+        {/* I would usually put this in a page component or something similar, but given the scope of the project
+        this felt more adequate. */}
         <Container>
           <Typography component="h1" variant="h2" gutterBottom align="center">
             Insurance Packages

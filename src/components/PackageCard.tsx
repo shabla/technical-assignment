@@ -11,9 +11,9 @@ import { InsurancePackage } from "../models/InsurancePackage";
 import { formatCurrency } from "../utils/formatCurrency";
 
 export interface PackageCardProps {
-  pkg: InsurancePackage;
+  value: InsurancePackage;
   isSelected: boolean;
-  onSelected: (pkg: InsurancePackage) => void;
+  onSelected: (value: InsurancePackage) => void;
 }
 
 const useStyles = makeStyles((theme) =>
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) =>
 );
 
 export const PackageCard = ({
-  pkg,
+  value,
   isSelected,
   onSelected,
 }: PackageCardProps): React.ReactElement => {
@@ -60,7 +60,7 @@ export const PackageCard = ({
   return (
     <Paper
       className={classes.root + (isSelected ? " selected" : "")}
-      onClick={(e) => onSelected(pkg)}
+      onClick={(e) => onSelected(value)}
       elevation={isSelected ? 7 : 2}
     >
       <Typography
@@ -69,16 +69,16 @@ export const PackageCard = ({
         className={classes.name}
         align="center"
       >
-        {pkg.insurerName}
+        {value.insurerName}
       </Typography>
 
       <Typography component="main" variant="body1" className={classes.desc}>
-        {pkg.description}
+        {value.description}
       </Typography>
 
       <Box className={classes.priceContainer}>
         <Typography component="span" variant="h3" className={classes.price}>
-          {formatCurrency(pkg.monthlyPrice)}
+          {formatCurrency(value.monthlyPrice)}
         </Typography>
         <Typography component="span" variant="body1">
           / month
